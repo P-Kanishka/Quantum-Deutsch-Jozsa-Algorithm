@@ -35,11 +35,18 @@ The algorithm utilizes **Superposition** and **Interference** to evaluate all po
 ---
 
 ### 📊 Experimental Results
-We tested the algorithm on a 3-qubit system. The measurement results show a **100% probability** collapse into the state `111` (indicating a Balanced function in this specific Oracle configuration), confirming the deterministic nature of the algorithm.
+We implemented the algorithm with **n=3** input qubits and **1** ancillary qubit.
+
+The Quantum Oracle was configured to be **Balanced**. According to the Deutsch-Jozsa algorithm:
+* **Constant Function** $\rightarrow$ Collapses to state `000`.
+* **Balanced Function** $\rightarrow$ Collapses to state `111`.
+
+**Observed Output:**
+The execution resulted in the state **`1111`** (Input `111` + Ancillary `1`) having the highest probability.
 
 ![Histogram Result](./screenshots/histogram.png)
 
-*(See `Deutsch_Jozsa_Qiskit.ipynb` for full execution logs)*
+*(Note: Minor noise in the histogram is expected due to quantum decoherence on real hardware/simulators, but the dominant state confirms the Balanced nature of the function.)*
 
 ---
 
